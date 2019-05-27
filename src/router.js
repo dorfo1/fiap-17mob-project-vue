@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Perfil from './views/Main/Perfil.vue'
+import Cadastro from './views/Usuario/Cadastro.vue'
+import Login from './views/Usuario/Login.vue'
+import Endereco from './views/Main/Endereco.vue'
+import Main from './views/Main/Main.vue'
 
 Vue.use(Router)
 
@@ -11,15 +15,27 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Main
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/cadastro',
+      name: 'cadastro',
+      component: Cadastro
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/perfil',
+      name: 'perfil',
+      component: Perfil
+    },
+    {
+      path: '/endereco',
+      name: 'endereco',
+      component: Endereco
     }
   ]
 })
